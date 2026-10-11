@@ -1,0 +1,138 @@
+# review(er)
+
+**Review a lesson. Build a reviewer. Choose how much conversation you need.**
+
+An AI-assisted learning skill for students and curious learners who want help
+without handing over the work of understanding. In **Review** mode, you explain,
+ask questions, work through mistakes, and build notes along the way. In
+**Reviewer** mode, the agent creates the document directly when time is short.
+
+I made this because I enjoy building reviewers and learning through the process,
+but sometimes I just need the notes. Long lecture videos can also be hard to sit
+through. This gives me a way to study at my own pace, with an AI that can explain
+a step again without judgment. It supports the difficult part of learning rather
+than pretending a generated PDF means I have learned it.
+
+## Two modes
+
+| Mode | What happens |
+|---|---|
+| **Review** | Short back-and-forth discussion, corrections and examples; approve each manageable part, then add it to the reviewer. |
+| **Reviewer** | Create requested notes directly, without teach-back or repeated section approvals; understanding is recorded as not assessed. |
+
+Switch modes without losing existing work. On first use, the agent asks what you
+are studying, your main learning goal, and your mode, unless already supplied.
+Goals such as computer science, nursing, automation, exam preparation or curiosity
+help it choose relevant examples.
+
+## Features
+
+- Maps supplied sources first, then follows the current topic using relevant evidence.
+- Connects examples and optional real-life applications to your learning goal.
+- Offers deeper exploration and optional quizzes, activities or practice problems; decline or skip offers for the session.
+- Keeps useful source images and valid instructor analogies, including their original language.
+- Offers improved diagrams or demos; creates them after your request or acceptance.
+- Preserves agreed **User's Understanding** notes separately from definitions and instructor explanations.
+- Flags source uncertainty and factual disagreements, offering clearly labeled choices for your notes.
+- Saves dated local subject/lesson progress, understanding gaps, completed reviewers and the exact resume point.
+- Builds a Typst PDF and requires inspection of rendered pages, with evidence that detects stale output.
+
+## Partner: TransVision
+
+[TransVision](https://github.com/Enerbonn/TransVision) turns a recording's visual
+content into timestamped frame PDFs, PNGs and optional OCR text. **review(er)**
+uses those exports to support learning and build the reviewer. It also works
+with ordinary notes, slides, documents and transcripts without TransVision.
+
+Pair a separate **audio transcript** with TransVision's **visual transcript or
+PDF**. Audio carries speech; visuals carry what was on screen. When speech is
+unclear, the agent can check nearby frames and notes instead of guessing. It
+maps sources initially, then retrieves relevant evidence rather than rereading
+every source on every turn.
+
+TransVision splits PDFs into parts of at most 100 pages by default. For example,
+250 exported frames from `10-11-2026.mp4` produce:
+
+```text
+10-11-2026_01.pdf   100 pages
+10-11-2026_02.pdf   100 pages
+10-11-2026_03.pdf    50 pages
+```
+
+At 100 pages or fewer, the PDF keeps the video's base name. The skill follows
+part order, timestamps and `pages.json` when supplied. Renamed files are fine.
+Give the agent the export folder or complete PDF parts when possible;
+`AI_UPLOAD.zip` includes only flagged images, not every selected frame. OCR is a
+draft, especially for mathematics, code and handwriting. The skill does not run
+TransVision, transcribe audio, or automatically upload materials.
+
+## Install
+
+This is an instruction package for an agent, not a standalone application.
+Download [this repository](https://github.com/Enerbonn/review-er) and copy the whole
+package into your project's skill folder:
+
+```text
+your-project/.agents/skills/reviewer-building/
+  SKILL.md
+  README.md
+  LICENSE
+  agents/
+  references/
+  scripts/
+  assets/
+```
+
+The display name is **review(er)**; the machine identifier stays
+**reviewer-building**, so the Codex invocation is `$reviewer-building`.
+Other agents supporting SKILL.md can use the package; their discovery locations
+and invocation syntax may differ.
+
+Example:
+
+> Use $reviewer-building in Review mode with these TransVision PDF parts and my
+> audio transcript. I am studying linear algebra for computer science and AI
+> automation. Save notes and progress in my linear-algebra folder.
+
+Or:
+
+> Use $reviewer-building in Reviewer mode. I have little time; create a reviewer
+> from these materials without the learning back-and-forth.
+
+## Requirements and saved work
+
+- An agent with file access and image/PDF viewing for source reading and visual checks.
+- Typst CLI for PDF compilation and page rendering. The template needs no global package installation or network package downloads.
+- Python 3.10+ for the optional extraction and verification helpers; standard library only.
+
+Learning can begin without a compiler. Missing tools are recorded as pending
+checks, rather than claiming output was verified.
+
+The chosen subject folder holds `_study-progress.md`, a compact lesson index.
+Each lesson has `_progress.md`, `reviewer.typ`, its compiled `reviewer.pdf`, local
+template/materials and verification evidence. A compatible agent resumes from
+these files. This is local memory, not account-wide memory. Private study work
+belongs outside the skill package; the `.gitignore` excludes common generated
+files but is not a complete privacy boundary.
+
+Agent procedures: [sources](references/materials.md), [progress](references/progress.md),
+[practice and visuals](references/practice-and-visuals.md), [Typst](references/typst.md),
+and [output verification](references/verification.md).
+
+## Limits
+
+Teaching quality depends on the agent and sources. The skill cannot guarantee
+accurate OCR, enforce every agent decision, or establish mastery from a document.
+The verification helper records inspected pages and detects changed artifacts;
+the agent must actually view and assess them. Learner feedback is welcome through
+[GitHub issues](https://github.com/Enerbonn/review-er/issues).
+
+## Credit and license
+
+Created by **Irvin John J. Parulan**. Source: [Enerbonn/review-er](https://github.com/Enerbonn/review-er).
+Partner: [Enerbonn/TransVision](https://github.com/Enerbonn/TransVision).
+
+The skill and bundled template use the [MIT license](LICENSE), including
+commercial use. Retain copyright and license notices in copies or substantial
+portions; creator and repository attribution is appreciated. This does not grant
+rights to imported lecture materials, third-party assets, or TransVision itself.

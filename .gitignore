@@ -1,0 +1,16 @@
+# Generated learner work and local environments do not belong in the skill release.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+reviewers/
+materials/
+verification/
+_progress.md
+_study-progress.md
+*.pdf
+page-*.png
+.DS_Store
+Thumbs.db

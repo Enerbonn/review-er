@@ -1,0 +1,4 @@
+interface:
+  display_name: "review(er)"
+  short_description: "Learn together or create goal-aware study notes directly"
+  default_prompt: "Use $reviewer-building with my lesson materials; establish my learning goal and choose Review for learning together or Reviewer for direct notes."
