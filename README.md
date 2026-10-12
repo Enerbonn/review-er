@@ -84,7 +84,9 @@ Give the agent the export folder or complete PDF parts when possible;
 draft, especially for mathematics, code and handwriting. The skill does not run
 TransVision, transcribe audio, or automatically upload materials.
 
-## Install
+## Ways to use review(er)
+
+### With a coding agent that can access local files
 
 This is an instruction package for an agent, not a standalone application.
 Download [this repository](https://github.com/Enerbonn/review-er) and copy the whole
@@ -117,9 +119,59 @@ Or:
 > Use $reviewer-building in Reviewer mode. I have little time; create a reviewer
 > from these materials without the learning back-and-forth.
 
+### In a regular AI chat: upload the instructions and lesson files
+
+You can use the conversational workflow without installing a coding agent or
+giving an AI access to your computer. Attach [SKILL.md](SKILL.md) to a chat that
+can read uploaded files, along with the materials you want to study:
+
+- Lecture notes or a document/PDF.
+- An audio transcript, preferably timestamped SRT or VTT; TXT works too.
+- TransVision visual transcripts, frame images or timestamped PDF parts.
+- Slides/PPTX, if supported by your chat; otherwise export the slides to PDF.
+
+Use whichever sources you have: notes, audio, visuals, or a combination. Having
+only one type is fine; missing evidence should be stated rather than invented.
+The chat needs image-reading capability to inspect diagrams or image-only PDF
+pages. If it cannot read a format, provide a readable export or the relevant pages.
+
+Example message after attaching the files:
+
+> Follow the attached SKILL.md as my study workflow. Use Review mode: help me
+> understand one small part at a time and build the notes as I approve them.
+> My immediate objective is exam preparation; my broader purpose is understanding
+> how these ideas apply to data analysis. Use the attached lesson sources and
+> distinguish instructor content from your added examples.
+
+For direct notes, replace Review with **Reviewer** and ask for the requested
+reviewer without the learning back-and-forth. You can also say **exam only**,
+**general curiosity**, or **skip personalization** instead of giving an application goal.
+In an ordinary chat, ask it to follow the attached instructions; skill invocation
+syntax such as `$reviewer-building` is not required.
+
+**SKILL.md is the starting point, not the entire package.** It links to supporting
+instructions the chat may not be able to open automatically. Attach the relevant
+files from [references/](references/) too, especially source handling, progress,
+and practice/visual guidance. For Typst output, supply the template assets and
+Typst/verification references as well. If the chat cannot read a linked resource,
+it should ask for it or state the limitation, rather than claim to have followed it.
+
+File limits and tools vary by chat. Send large lessons in chronological batches,
+keeping timestamps and PDF part names, and identify anything not uploaded yet.
+A chat without a compiler can still teach and create Markdown notes or Typst
+source; it cannot claim a compiled, visually verified PDF. Scripts require an
+execution tool, and the template must be available for the formatted Typst output.
+
+**Save your own checkpoint:** ask for a downloadable or copyable progress summary
+with your goals, covered parts, understanding/gaps, approved notes, source locations
+and exact next question. Save it with the reviewer. When returning or starting a
+new chat, attach that checkpoint and the relevant sources again. Without local
+file tools, saving progress to your computer is a manual step; chat memory alone
+should not be treated as the lesson record.
+
 ## Requirements and saved work
 
-- An agent with file access and image/PDF viewing for source reading and visual checks.
+- Access to the supplied files, through local tools or chat attachments; image/PDF viewing for visual source reading and output checks.
 - Typst CLI for PDF compilation and page rendering. The template needs no global package installation or network package downloads.
 - Python 3.10+ for the optional extraction and verification helpers; standard library only.
 
