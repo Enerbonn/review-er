@@ -68,7 +68,7 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
 
 ## Reviewer mode
 
-Read and reconcile sources, then create the requested reviewer directly. Include
+Complete the section evidence check for each part, then create the requested reviewer directly. Include
 precise definitions, worked examples, useful source visuals/teacher analogies,
 and relevant applications tied to the saved purpose/preferences. Resolve a missing
 broader purpose (or opt-out) first; this one setup question does not introduce a
@@ -88,6 +88,11 @@ Avoid a whole-lesson monologue or a fixed word quota. A long section may need
 several discuss/approve/write cycles; append approved subparts as they finish,
 and mark the section complete only when its planned subparts are covered.
 
+0. **Check sources before teaching or testing.** For every new section/subpart,
+   complete the [section evidence check](references/materials.md#section-evidence-check)
+   before explaining, assigning exercises, or proposing notes. Initial sampling,
+   topic familiarity, and correct learner answers do not replace this check.
+   Reuse a recorded check for unchanged evidence; refresh it when sources change.
 1. **Ask before explaining.** Name the concept and ask for a definition, prediction,
    example, failure case, or teach-back. Vary the prompt. Wait for the answer.
 2. **Judge honestly.** A correct answer needs a clear acknowledgment. A shallow

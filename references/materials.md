@@ -10,18 +10,38 @@ image-only files need bounded chronological batches; record unread/unreadable
 portions and finish the relevant context pass before teaching them. Map newly
 added files too; unchanged mapped files need not be reread on each resume.
 
-Then use evidence selectively for the current part. Audio may carry a teacher's
-explanation, frames/PDF may resolve notation, and notes may give the definition.
-Ten supplied files do not require ten rereads or citations per response. If speech
-is garbled, check visuals around that timestamp and nearby spoken context, allowing
-for clock offsets. If alignment is uncertain, match topics and state the limitation.
-Visual text does not establish what was spoken; audio does not establish image labels.
+## Section evidence check
 
-Preserve valid instructor analogies/styles in their original language with sources.
-Separate teacher explanation, learner interpretation, and agent-added examples.
-Before treating a disagreement as factual, check for simplification, different
-notation, or transcription error. Do not replace a correct alternative approach
-just because it differs from textbook phrasing.
+Before teaching, assigning an exercise, or drafting each new section/subpart:
+
+1. Read the relevant spoken transcript passage and inspect the matching lecture
+   visuals/slides in chronological order, including enough neighboring context to
+   capture the instructor's method, analogies, practical tips and qualifications.
+   Use all supplied evidence types relevant to that part; a slide-only check does
+   not replace a supplied spoken transcript, nor does transcript text replace visuals.
+2. Align SRT/VTT cue ranges with frame timestamps or PDF page mappings. Verify the
+   same recording/start point and any offset; do not infer alignment from names.
+   For untimed TXT, match by content and record the timing limitation. If speech,
+   notation or alignment is ambiguous, inspect nearby frames/cues or the available
+   recording; never invent a quotation, timestamp or missing explanation.
+3. Reconcile the accounts and record a concise local trace: topic, transcript file
+   and cue range (or untimed passage), visual file and pages/timestamps, instructor
+   methods/tips worth preserving, uncertainties and unread portions. Label exercises
+   and applications added by the agent separately from instructor content.
+
+Do not teach or test an unchecked part from general knowledge merely to keep pace.
+If relevant evidence is missing, still being exported, unreadable or inaccessible,
+state the specific gap and pause that part or obtain the user's explicit choice
+of a provisional explanation. Such a choice does not mark source coverage complete.
+When only one source type was supplied, check that type and record the limitation;
+do not require the learner to generate another format.
+
+This is a per-part check, not a full-course reread on every message. Reuse a saved
+trace for unchanged material in the same part; refresh changed/new evidence before
+continuing. Initial bounded sampling is orientation, not completion of this check.
+Save traces in local progress/source records, not the compact reviewer. Preserve
+valid instructor approaches/analogies in their original language with provenance;
+distinguish them from learner interpretations and agent-added explanations.
 
 ## Slides, documents, and transcripts
 
