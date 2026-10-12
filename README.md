@@ -55,8 +55,15 @@ content into timestamped frame PDFs, PNGs and optional OCR text. **review(er)**
 uses those exports to support learning and build the reviewer. It also works
 with ordinary notes, slides, documents and transcripts without TransVision.
 
-Pair a separate **audio transcript** with TransVision's **visual transcript or
-PDF**. Audio carries speech; visuals carry what was on screen. When speech is
+Pair a separate **SRT audio transcript** with TransVision's **timestamped PDF
+parts or visual transcript**. Export SRT from your audio transcription app and
+enable **PDF timestamps** in TransVision. **VTT works equally well**; the skill's
+extractor preserves cue times in both formats. Plain TXT remains usable, but if
+it has no timestamps, matching speech to visuals depends on topic and context.
+Use the same recording start point and report any trimming or clock offset;
+never invent timestamps for untimed text.
+
+Audio carries speech; visuals carry what was on screen. When speech is
 unclear, the agent can check nearby frames and notes instead of guessing. It
 maps sources initially, then retrieves relevant evidence rather than rereading
 every source on every turn.
@@ -102,7 +109,7 @@ and invocation syntax may differ.
 Example:
 
 > Use $reviewer-building in Review mode with these TransVision PDF parts and my
-> audio transcript. I am studying linear algebra for computer science and AI
+> SRT audio transcript from the same recording. I am studying linear algebra for computer science and AI
 > automation. Save notes and progress in my linear-algebra folder.
 
 Or:

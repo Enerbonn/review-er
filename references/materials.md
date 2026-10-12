@@ -45,6 +45,14 @@ Subtitle cue times are retained so statements can be traced to the recording;
 caption markup is removed. Keep the original alongside the extraction. Do not
 overwrite it or a corrected transcript. Unsupported formats fail explicitly.
 
+For pairing spoken explanations with TransVision, recommend an SRT audio export
+and timestamped visual PDF parts from the same recording. VTT is equally supported.
+Prefer a supplied timed transcript over an untimed copy when tracing evidence;
+check matching start points and any trimming or clock offset. Plain TXT remains
+valid input, but if it lacks timestamps, align by topic/context and record that
+precise time alignment is unavailable. Never invent cue times or require the
+learner to regenerate a transcript before using otherwise adequate materials.
+
 ## TransVision exports (formerly FrameRead)
 
 TransVision produces a *visual* transcript from selected frames. It does not provide
