@@ -59,7 +59,7 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
    resolve only material ambiguities, not routine choices.
 6. Initialize the preamble, bundled template, and progress files. Use the
    user's course folder if supplied, otherwise `reviewers/YYYY-MM-DD-topic/` in the
-   selected project. Use the user's timezone for dates; omit unknown metadata.
+   selected project. Keep dates and workflow metadata in local progress; the reviewer defaults to study content only.
    Read [references/typst.md](references/typst.md) before writing or compiling.
    Read [references/progress.md](references/progress.md) for subject/lesson memory.
 
@@ -140,10 +140,10 @@ and mark the section complete only when its planned subparts are covered.
    language, including Tagalog/English, without manufacturing a quote. Correct
    misconceptions together first; label an earlier misconception and its correction
    if retained. Keep the precise definition alongside the personal interpretation.
-   Instructor analogies have their own attributed label/source, not the user's label.
+   Instructor analogies use a distinct teaching label, not the user's label; record exact attribution/provenance in local progress.
 6. **Append and verify.** Add only this approved part to `reviewer.typ`, preserving earlier
-   approved content. Targeted fixes are fine; never regenerate the whole reviewer
-   to append a section. Compile, render affected pages, and inspect them for clipped
+   approved content. Targeted fixes and user-requested compaction are fine; never regenerate unrelated approved content
+   merely to append a section. Compile, render affected pages, and inspect them for clipped
    text, overflow, unreadable figures, or detached headings. Reflow can change earlier
    pages, so include those affected pages too. Use the evidence workflow in
    [references/verification.md](references/verification.md); compilation alone
@@ -160,6 +160,29 @@ If interrupted before approval, save what was discussed and the outstanding
 question without writing the section. If the learner changes scope, update the
 plan with them; don't silently discard their approved work.
 
+## Compact study notes
+
+Keep the PDF focused on learning: precise definitions, rules, necessary worked
+steps, useful visuals, and approved applications. Keep source filenames/paths,
+page/timestamp references, session dates, approvals, build/verification status,
+coverage logs, and conversational history in `_progress.md` or source records,
+not in the reviewer. Do not add a bibliography, source footer, cover metadata,
+or explanations of what the agent included/omitted unless the user requests them.
+Dates that are part of the subject matter are still content. Preserve provenance
+and source-versus-added distinctions locally; use short pedagogical labels only
+when they help learning. Retain any required reuse credit without adding routine
+workflow metadata.
+
+Scale length to the material, not the number of conversation turns. Consolidate
+related short ideas, use ordinary paragraphs or a compact table, and keep only
+examples that add a distinct rule, technique, or correction. Avoid repeating the
+same explanation in a definition, plain box, takeaway, example, and summary.
+Use callouts sparingly; short subtopics do not each need a new page or a cover.
+Never achieve compactness by omitting required topics, essential working steps,
+or making text/figures hard to read. When the user requests a shorter reviewer,
+compact existing approved content in place and reverify it, preserving substance
+and explicit exclusions. Keep detailed learning history in progress files.
+
 ## Language and content
 
 - Keep technical terminology and definitions academically precise. English is the
@@ -173,8 +196,8 @@ plan with them; don't silently discard their approved work.
   practice at section boundaries but never start it without the user's choice.
   Keep practice conversational unless the user wants it in the reviewer or a
   separate activity.
-- Prefer the instructor's original diagram. Inspect it, preserve labels and source
-  attribution. Create supplementary or improved visuals/demos only on request
+- Prefer the instructor's original diagram. Inspect it, preserve instructional labels and record source
+  provenance locally. Create supplementary or improved visuals/demos only on request
   or accepted offer; label additions as generated teaching aids. Exclude private overlays
   from reused frames without cropping away instructional content.
 - OCR confidence is not evidence of correctness, especially for math, code, and

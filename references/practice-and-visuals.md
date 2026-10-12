@@ -12,8 +12,9 @@ connections directly; skip conversational offers unless a decision is needed.
 Exam scope is the immediate objective, not evidence of broader purpose. Complete
 the entrypoint's missing-purpose check before either mode starts. Exam-only and
 skipped personalization use course-relevant examples without inferred interests.
-Label added examples as agent-provided, distinguish direct use from foundational
-connections, and retain instructor content/analogies under their source attribution.
+Distinguish direct use from foundational connections. Record added examples and
+instructor attribution in local progress; use only useful short teaching labels
+in the PDF rather than workflow/provenance commentary.
 Offer an optional knowledge check in the same short transition rather than stacking several menus.
 Accept "move on", "I'm in a hurry", or "skip quizzes today" without pushing.
 Remember a session-wide preference. An explanation is enough to move forward
@@ -41,7 +42,8 @@ before revising previously approved notes.
 
 ## Preserve source visuals; propose additions
 
-Keep informative original images/diagrams with their source locations. Inspect
+Keep informative original images/diagrams; save exact source locations in local
+progress, not routine PDF captions. Inspect
 labels, relationships, and readability. When an aid is lacking, name why a new
 visual helps: "This diagram shows the result but not the intermediate steps;
 I can add a step-by-step version if you'd like."

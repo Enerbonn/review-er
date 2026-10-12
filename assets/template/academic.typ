@@ -247,7 +247,8 @@
   author: none,
   instructor: none,
   sources: (),
-  cover: true,
+  cover: false,
+  section-breaks: false,
   body,
 ) = {
   set document(title: title, author: if author == none { () } else { author })
@@ -290,7 +291,7 @@
   // ── Headings ───────────────────────────────────────────────
   // Level 1: a maroon banner, like a chapter opener.
   show heading.where(level: 1): it => context {
-    if counter(heading).get().first() > 1 or cover { pagebreak(weak: true) }
+    if (section-breaks and counter(heading).get().first() > 1) or cover { pagebreak(weak: true) }
     block(
       width: 100%,
       fill: maroon,

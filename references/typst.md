@@ -5,7 +5,10 @@ Import it relatively; no global package installation is needed. Preserve the
 template's LICENSE with the copy. Do not import `@local/parulan` or assume CeTZ,
 Tinymist, fonts, or a compiler are installed. Check the available Typst CLI first.
 
-Initialize `reviewer.typ` with metadata actually supplied by the learner:
+Initialize `reviewer.typ` with a short title and useful course/topic labels. Keep
+workflow dates, people/source metadata, and provenance out of the PDF by default,
+even when supplied for progress. Populate those optional fields only when the
+user requests them:
 
 ```typst
 #import "template/academic.typ": *
@@ -21,8 +24,8 @@ Initialize `reviewer.typ` with metadata actually supplied by the learner:
 )
 ```
 
-Replace the generic title when the topic is known. A cover page suits a longer
-reviewer; `cover: false` gives a compact masthead. Keep unknown values `none`.
+Replace the generic title when the topic is known. Use the default compact masthead (`cover: false`); a cover is opt-in for a
+longer document. Keep metadata fields `none` and `sources: ()` by default.
 
 ## Components
 
@@ -34,18 +37,22 @@ reviewer; `cover: false` gives a compact masthead. Keep unknown values `none`.
 | `#inpractice[...]` | practical connection |
 | `#understanding[...]` | agreed learner interpretation; generic label by default |
 | `#understanding(name: "Learner")[...]` | named label only when the learner supplies that preference |
-| `#teacheranalogy[...]` | valid instructor analogy with source attribution in the body |
+| `#teacheranalogy[...]` | valid instructor analogy; exact attribution saved in progress |
 | `#gotcha[...]` | common mistake |
 | `#plain[...]` | requested explanation or demonstrated difficulty |
 | `#recall[...]` | optional self-test, on request |
 | `#compare("A", [a], "B", [b])` | short comparison |
 | `#steps([first], [second])` | ordered process |
 | `#flow([A], [B], [C], caption: [Process])` | short horizontal sequence |
-| `#figbox(image("materials/lecture/media/image1.png", width: 90%), caption: [Source: lecture slide 3])` | source figure |
+| `#figbox(image("materials/lecture/media/image1.png", width: 90%), caption: [Transformation of the vector])` | source figure |
 | `#hl[...]`, `#concept[...]` | selective emphasis |
 | `#rvec(1, 4, 3)` | compact inline column vector |
 
-Level-1 headings open sections on new pages. Use level 2 for short subtopics.
+Level-1 headings flow on the current page by default; use level 2 for short
+subtopics. Set `section-breaks: true` only when chapter openings on new pages
+help the requested document. Keep related short ideas together; do not add page
+breaks merely because a new conversation part was approved. Preserve readable
+font sizes and necessary worked steps; compact repetition and oversized boxes first.
 Avoid tall inline matrix/vector math; use `rvec` or display math. Callouts are
 unbreakable by default: split long ones logically or pass `breakable: true` to a
 callout that supports it. Use vertical steps or tables for sequences too wide for

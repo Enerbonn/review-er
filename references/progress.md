@@ -48,6 +48,17 @@ proficiency percentages, mastery, scores or quotes. Scores require actual agreed
 practice. Preserve useful learner phrasing and teacher analogies with provenance,
 corrections and agreed inclusion choices.
 
+## Keep tracking out of the reviewer
+
+Local progress/source records hold dates, source filenames/pages/timestamps,
+source-versus-added provenance, approval history, coverage and exclusions,
+compilation/inspection evidence, and pending actions. These remain required even
+when the PDF has no source list or metadata. Do not copy the tracking log or
+process commentary into study notes. A source correction may need a concise
+content warning in the PDF; its exact citation and verification belong here
+unless the user requests visible references. Save compactness preferences and
+explicit content exclusions, including changes to earlier approved sections.
+
 ## Save and resume
 
 Update both records after meaningful work and before stopping, even before

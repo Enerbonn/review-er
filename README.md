@@ -31,6 +31,11 @@ preferences are saved separately, and can change without restarting a lesson.
 Examples distinguish direct applications from foundational connections; added
 examples are labeled separately from instructor content.
 
+Reviewers default to compact study notes: definitions, essential worked examples,
+and useful visuals. Dates, source references, approvals, and verification details
+stay in local progress files. Covers, bibliographies, and extended notes are
+available when requested. Compactness preserves required topics and readability.
+
 ## Features
 
 - Maps supplied sources first, then follows the current topic using relevant evidence.
