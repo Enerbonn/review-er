@@ -4,11 +4,16 @@
 
 When a section is understood, make room for unanswered questions, a detail the
 learner is curious about, or an everyday/practical application. Offer an
-application specifically connected to the saved goal, without forcing a weak
+application suited to the explicit broader purpose and preferences, without forcing a weak
 analogy. Deeper exploration/application is available whether or not the learner
 wants a quiz. Preserve valid instructor analogies and the learner's agreed
 interpretation separately in the notes. In Reviewer mode, include useful goal
 connections directly; skip conversational offers unless a decision is needed.
+Exam scope is the immediate objective, not evidence of broader purpose. Complete
+the entrypoint's missing-purpose check before either mode starts. Exam-only and
+skipped personalization use course-relevant examples without inferred interests.
+Label added examples as agent-provided, distinguish direct use from foundational
+connections, and retain instructor content/analogies under their source attribution.
 Offer an optional knowledge check in the same short transition rather than stacking several menus.
 Accept "move on", "I'm in a hurry", or "skip quizzes today" without pushing.
 Remember a session-wide preference. An explanation is enough to move forward

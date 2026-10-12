@@ -25,14 +25,23 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
    Reconcile the checklist against the document and resume the unfinished
    discussion. Search only the supplied course/output folder; don't scan unrelated
    personal files. If no location is known, ask for materials and destination together.
-3. On first use in a subject, ask together: "What are you studying, what is your
-   main goal, and do you want Review (learn together while building notes) or
-   Reviewer (create the notes directly)?" Use information already supplied;
-   don't ask again when the answer is known. Goals may be a field, project,
-   application, exam, or general curiosity. A user may skip personalization.
-   Save the goal and mode locally; on return, resume them unless the user changes
-   them. A new lesson need not repeat subject onboarding. Ask for a missing
-   materials/output location in the same exchange when necessary.
+3. Establish three distinct inputs, using explicitly supplied answers:
+   **subject/source coverage** (materials and topics), **immediate objective**
+   (exam, assignment, or document creation), and **broader learning purpose**
+   (what the learner wants to understand, build, or become; relevant applications).
+   Knowing the subject, exam pointers/scope, and mode does not establish the
+   broader purpose. If it is missing, ask one concise question before teaching
+   or drafting: "Beyond these study requirements, what would you like to understand
+   or use this for—exam only, general curiosity, or a particular application?
+   You can also skip personalization." Wait for the answer; never infer it from
+   the workspace owner's profile. An explicit "exam only", "general curiosity",
+   or personalization opt-out resolves the question; a career goal is not required.
+   Ask about mode/location only if missing, grouping missing setup fields naturally.
+   Save immediate objective, broader purpose or opt-out, and application preferences
+   separately. Reuse explicit current or saved answers without repeated onboarding.
+   For legacy progress with only an exam/scope goal, broader purpose is still
+   unknown: ask once, then resume the pending step. Apply explicitly changed goals
+   without restarting the lesson or seeking the same answer again.
 4. Make an initial context pass through every supplied source, one by one,
    before proposing the plan. Map coverage, chronology, source roles, and gaps;
    record any file/portion not actually read. Then retrieve only evidence relevant
@@ -58,7 +67,9 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
 
 Read and reconcile sources, then create the requested reviewer directly. Include
 precise definitions, worked examples, useful source visuals/teacher analogies,
-and relevant applications tied to the saved goal. No teach-back, quizzes, or
+and relevant applications tied to the saved purpose/preferences. Resolve a missing
+broader purpose (or opt-out) first; this one setup question does not introduce a
+teaching or per-section approval loop. No teach-back, quizzes, or
 per-section approval loop. New diagrams/demos remain opt-in unless requested.
 Do not invent a learner's understanding or write a personalized understanding
 box from the model's explanation. Existing learner notes may be reused with
@@ -80,10 +91,16 @@ and mark the section complete only when its planned subparts are covered.
    answer needs a targeted question about the mechanism. A wrong answer needs the
    exact error and a counterexample, then a chance to restate it. If the learner
    doesn't know, teach briefly and check understanding; don't trap them in a quiz.
-3. **Connect to the learner's goal.** Use the saved field/project/goal to choose
+3. **Connect to the learner's purpose.** Use the explicit saved purpose/application preferences to choose
    understandable examples and applications throughout the conversation and
    reviewer. For a CS/automation learner, connect an applicable concept to data,
    programming, or workflow decisions; don't force a connection that distorts it.
+   Distinguish **direct applications** (the concept actually solves a task) from
+   **foundational connections** (a prerequisite or way of reasoning, not a claim
+   that the concept directly implements the task). Label agent-added examples
+   separately from instructor content. With exam-only or skipped personalization,
+   choose accurate course-relevant examples; don't add career assumptions or force
+   every concept into the same interest. Read optional additions guidance when needed.
    Offer a practical use, common mistake, or connection to prior understanding.
    Distinguish lecture claims from added
    examples. Resolve conflicts or uncertainty using the source or an authoritative
@@ -101,7 +118,7 @@ and mark the section complete only when its planned subparts are covered.
    accepts the offer; don't silently replace the source visual.
 4. **Offer an optional next step.** Before moving
    on, offer space for questions, a curious/favorite detail to explore, or a
-   real-life application tied specifically to their main goal. Give a concrete
+   real-life application suited to their stated purpose/preferences, when relevant. Give a concrete
    option when useful, such as "Want to see how this matrix transformation applies
    to image processing, explore this step further, or move on?" Deeper exploration
    and applications are optional independently of practice. When the user has explained or demonstrated
@@ -177,7 +194,8 @@ reviewers/YYYY-MM-DD-topic/
   verification/              render runs and inspection evidence
 ```
 
-The lesson progress file holds: goal and mode; approved plan; per-section/part state (planned, discussing,
+The lesson progress file holds: coverage, immediate objective, broader purpose or
+explicit opt-out, application preferences and mode; approved plan; per-section/part state (planned, discussing,
 approved, written, verified); next question; source file plus slide/page/timestamp;
 uncertainties; demonstrated difficulties; optional practice/visual choices; and the
 latest compile/visual check with evidence paths. A checked

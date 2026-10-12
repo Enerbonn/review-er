@@ -1,16 +1,29 @@
-# Generated learner work and local environments do not belong in the skill release.
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-.env
-.env.*
-reviewers/
-materials/
-verification/
-_progress.md
-_study-progress.md
-*.pdf
-page-*.png
-.DS_Store
-Thumbs.db
+# Only these end-user files belong in the public skill repository.
+# Unknown files (including personal notes with arbitrary names) are ignored.
+# Git still requires reviewing tracked changes; -f bypasses these exclusions.
+/*
+!/.gitignore
+!/SKILL.md
+!/README.md
+!/LICENSE
+!/agents/
+/agents/*
+!/agents/openai.yaml
+!/references/
+/references/*
+!/references/materials.md
+!/references/typst.md
+!/references/practice-and-visuals.md
+!/references/verification.md
+!/references/progress.md
+!/scripts/
+/scripts/*
+!/scripts/extract-materials.py
+!/scripts/verify-reviewer.py
+!/assets/
+/assets/*
+!/assets/template/
+/assets/template/*
+!/assets/template/academic.typ
+!/assets/template/fonts.typ
+!/assets/template/LICENSE

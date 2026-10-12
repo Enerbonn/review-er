@@ -21,9 +21,15 @@ than pretending a generated PDF means I have learned it.
 | **Reviewer** | Create requested notes directly, without teach-back or repeated section approvals; understanding is recorded as not assessed. |
 
 Switch modes without losing existing work. On first use, the agent asks what you
-are studying, your main learning goal, and your mode, unless already supplied.
-Goals such as computer science, nursing, automation, exam preparation or curiosity
-help it choose relevant examples.
+are studying, the immediate objective, and the broader learning purpose, plus mode
+if missing. Exam pointers tell it what to cover; they do not answer what you want
+to understand or use it for. If broader purpose is unknown, it asks one short
+question before teaching or drafting. "Exam only", "general curiosity", and
+skipping personalization are valid answers; no career goal is required.
+Explicit or saved answers are reused. Immediate and broader goals and application
+preferences are saved separately, and can change without restarting a lesson.
+Examples distinguish direct applications from foundational connections; added
+examples are labeled separately from instructor content.
 
 ## Features
 
@@ -113,7 +119,8 @@ Each lesson has `_progress.md`, `reviewer.typ`, its compiled `reviewer.pdf`, loc
 template/materials and verification evidence. A compatible agent resumes from
 these files. This is local memory, not account-wide memory. Private study work
 belongs outside the skill package; the `.gitignore` excludes common generated
-files but is not a complete privacy boundary.
+files using an explicit end-user-file allowlist. Arbitrarily named personal files
+are ignored too; forced additions and already tracked files still need review.
 
 Agent procedures: [sources](references/materials.md), [progress](references/progress.md),
 [practice and visuals](references/practice-and-visuals.md), [Typst](references/typst.md),
