@@ -84,6 +84,16 @@ Give the agent the export folder or complete PDF parts when possible;
 draft, especially for mathematics, code and handwriting. The skill does not run
 TransVision, transcribe audio, or automatically upload materials.
 
+If your lesson includes **SOURCES.md** or a source-index README, supply it too.
+The agent uses it to identify notes, speech transcripts, visual parts and related
+classes before reading their contents. A supplied practice reviewer can guide
+exercise types and exam preparation; it does not automatically establish exam coverage.
+
+The optional [course-resource-organizer companion skill](https://github.com/Enerbonn/review-er/blob/main/companion-skills/course-resource-organizer/SKILL.md)
+handles readable naming, verified moves, transcript replacement and source-guide
+updates before learning begins. Install that folder separately in your agent's
+skills directory when you want resource organization.
+
 ## Ways to use review(er)
 
 ### With a coding agent that can access local files

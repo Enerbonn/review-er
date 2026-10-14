@@ -27,3 +27,9 @@
 !/assets/template/academic.typ
 !/assets/template/fonts.typ
 !/assets/template/LICENSE
+
+!/companion-skills/
+/companion-skills/*
+!/companion-skills/course-resource-organizer/
+/companion-skills/course-resource-organizer/*
+!/companion-skills/course-resource-organizer/SKILL.md
