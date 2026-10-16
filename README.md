@@ -42,7 +42,8 @@ available when requested. Compactness preserves required topics and readability.
 - Connects examples and optional real-life applications to your learning goal.
 - Offers deeper exploration and optional quizzes, activities or practice problems; decline or skip offers for the session.
 - Keeps useful source images and valid instructor analogies, including their original language.
-- Offers improved diagrams or demos; creates them after your request or acceptance.
+- Shows relevant source images, slide/page excerpts or lecture frames in the conversation when helpful.
+- Creates focused diagrams or interactive teaching aids when they improve understanding; keeps text-only explanations when sufficient and respects your preferences.
 - Preserves agreed **User's Understanding** notes separately from definitions and instructor explanations.
 - Flags source uncertainty and factual disagreements, offering clearly labeled choices for your notes.
 - Saves dated local subject/lesson progress, understanding gaps, completed reviewers and the exact resume point.
@@ -187,6 +188,12 @@ should not be treated as the lesson record.
 
 Learning can begin without a compiler. Missing tools are recorded as pending
 checks, rather than claiming output was verified.
+
+Inline images and interactive buttons, tabs or sliders depend on the chat's
+display capabilities. The agent uses available visualization tools when useful,
+with static diagrams or a local preview as fallbacks. The skill does not add UI
+support to a host that lacks it. Conversational visuals do not start a quiz or
+bypass Review-mode approval before adding content to the reviewer.
 
 The chosen subject folder holds `_study-progress.md`, a compact lesson index.
 Each lesson has `_progress.md`, `reviewer.typ`, its compiled `reviewer.pdf`, local

@@ -78,7 +78,7 @@ precise definitions, worked examples, useful source visuals/teacher analogies,
 and relevant applications tied to the saved purpose/preferences. Resolve a missing
 broader purpose (or opt-out) first; this one setup question does not introduce a
 teaching or per-section approval loop. No teach-back, quizzes, or
-per-section approval loop. New diagrams/demos remain opt-in unless requested.
+per-section approval loop. Use visual aids selectively under the guidance below.
 Do not invent a learner's understanding or write a personalized understanding
 box from the model's explanation. Existing learner notes may be reused with
 their provenance. Compile, inspect all pages, and save coverage, uncertainties,
@@ -125,10 +125,15 @@ and mark the section complete only when its planned subparts are covered.
    with a correction note, both, or omit the disputed point. Never present a known
    false claim as established fact. A harmless teaching simplification needs its
    limits explained only when those limits matter to this lesson.
-   Keep useful source images and diagrams. If a visual is missing, incomplete,
-   misleading, or hard to read, explain the gap and offer a clearer diagram,
-   worked visual, or small demo. Build it only when the user requests it or
-   accepts the offer; don't silently replace the source visual.
+   Use the smallest explanation that helps: text, symbols, or equations are enough
+   when clear. When spatial relationships, changing values, or intermediate steps
+   are hard to explain in text, show the relevant source image, slide/page crop,
+   or frame directly in the conversation. If that is insufficient, create a focused
+   diagram, worked visual, or interactive teaching aid when it materially improves
+   understanding; no separate per-aid permission is needed. Prefer source visuals,
+   label generated additions, and respect requests to skip visuals. Read
+   [references/practice-and-visuals.md](references/practice-and-visuals.md) when using
+   these aids; don't silently replace the source or interrupt the learning dialogue.
 4. **Offer an optional next step.** Before moving
    on, offer space for questions, a curious/favorite detail to explore, or a
    real-life application suited to their stated purpose/preferences, when relevant. Give a concrete
@@ -141,7 +146,7 @@ and mark the section complete only when its planned subparts are covered.
    check before we move on?" Wait for the choice. Declining or being in a hurry
    is fine; continue without a test. Respect a session-wide preference to skip
    offers. Read [references/practice-and-visuals.md](references/practice-and-visuals.md)
-   when either addition is accepted. Include newly discussed content in the
+   when practice is accepted or a visual aid is useful. Include newly discussed content in the
    proposed write-up before approval.
 5. **Confirm the write-up.** Summarize what will go into this part and ask if
    anything is missing. Wait for agreement. Silence, an approved outline, an
@@ -210,8 +215,8 @@ and explicit exclusions. Keep detailed learning history in progress files.
   Keep practice conversational unless the user wants it in the reviewer or a
   separate activity.
 - Prefer the instructor's original diagram. Inspect it, preserve instructional labels and record source
-  provenance locally. Create supplementary or improved visuals/demos only on request
-  or accepted offer; label additions as generated teaching aids. Exclude private overlays
+  provenance locally. Show source excerpts or create supplementary teaching aids
+  selectively when they help understanding; label additions as generated teaching aids. Exclude private overlays
   from reused frames without cropping away instructional content.
 - OCR confidence is not evidence of correctness, especially for math, code, and
   handwriting. Preserve uncertain readings and verify against visible source images.

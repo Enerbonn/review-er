@@ -48,7 +48,8 @@ or describe unchecked output as verified.
 
 ## Optional demos
 
-Use available browser tools to open a user-requested local HTML demo, exercise
+Follow the available visualization tool/skill's checks for inline interactive aids.
+Use available browser tools to open a local HTML demo, exercise
 discussed scenarios, and capture/read screenshots. For example, change a vector
 with its control and compare the displayed result to the expected calculation.
 Record tested inputs/outputs and screenshot paths. Use a local server when the
