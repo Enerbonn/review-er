@@ -28,7 +28,10 @@ an activity asks the learner to produce or demonstrate something; a practice exa
 can span discussed sections with a requested time/length/difficulty. Do not test
 undiscussed material unless the user explicitly requests a diagnostic.
 
-Let the learner answer before revealing solutions. Give specific feedback on
+In conversational checks or a mock exam, let the learner answer before revealing
+solutions. An explicitly requested side-by-side answer reviewer instead shows
+answers immediately; follow [assessments.md](assessments.md) for both formats.
+Give specific feedback on
 reasoning, explain mistakes, and offer a retry or similar example if helpful.
 Record observed understanding and remaining gaps, not an unsupported mastery
 claim. Score only when requested or part of the agreed format. Keep answers

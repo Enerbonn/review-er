@@ -29,6 +29,29 @@ longer document. Keep metadata fields `none` and `sources: ()` by default.
 
 ## Components
 
+Optional choices: `style: "visual"` or `style: "compact"`; default `"classic"`
+preserves the previous layout. `profile: "tablet"` selects 180 x 240 mm portrait
+with pen margin; default `"paper"` remains A4. `navigator: true` adds a linked
+topic outline. Use headings for PDF bookmarks; inspect the actual navigation.
+These are independent of Review/Reviewer and output selection. Read
+[presentation.md](presentation.md) before designing explicit styles.
+
+New units inherit the main body size (11.5 pt visual, 11 pt compact), rather than
+the fixed small sizes of legacy callout/compare helpers. Prefer `study-unit` with
+prose/diagrams or full-width `table.header` tables for learning pages, not long
+legacy comparison boxes. Do not squeeze long content into an unbreakable unit.
+
+| Component | Use |
+|---|---|
+| `#study-unit("Relationship")[...]` | heading attached to explanatory content; body may continue |
+| `#study-figure(image("diagram.svg"), caption: [Interpretation])` | figure and readable caption kept together |
+| `#note-lines(count: 2)` | annotation space |
+| `#practice-pair([question], [answer], stacked: true)` | explicit full-width fallback for long question/answer pairs |
+
+Use native shapes/grid/lines for original vector diagrams; label direction,
+conditions and units. The medium should teach a relationship, not add decorations.
+For practice generation and bank schema read [assessments.md](assessments.md).
+
 | Component | Purpose |
 |---|---|
 | `#definition("Term")[...]` | precise definition |

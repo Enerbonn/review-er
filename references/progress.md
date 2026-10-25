@@ -26,6 +26,16 @@ other fields and earlier learning evidence, and use the new preferences going fo
 
 ## Lesson record: `_progress.md`
 
+Save interaction mode separately from presentation (legacy/Visual Learning/Compact
+Recall), output selection (guide/answer reviewer/mock exam), device/page profile,
+and length preferences. Reuse explicit choices; don't repeat setup or infer mastery.
+Keep one checked concept/source map shared by styles and an assessment blueprint
+linked to the same scope. Record approved exclusions or abridgment, canonical bank
+path/hash and finalized option ordering, correction dates/jurisdiction when relevant,
+and inspection coverage per delivered PDF. Reviewer authorization never fabricates
+Review discussions or approvals. A restyle preserves approved substance and records
+any material scope tradeoff rather than silently overwriting it.
+
 Save the outline and per-part document state. Review uses
 `planned -> discussing -> approved -> written -> verified`. Reviewer may use
 `planned -> written -> verified`, recording scope-level drafting authorization;

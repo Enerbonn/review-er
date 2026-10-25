@@ -36,6 +36,39 @@ and useful visuals. Dates, source references, approvals, and verification detail
 stay in local progress files. Covers, bibliographies, and extended notes are
 available when requested. Compactness preserves required topics and readability.
 
+## Choose the presentation and outputs
+
+These choices are separate from Review/Reviewer:
+
+| Choice | Use it for |
+|---|---|
+| **Visual Learning** | Understanding the subject through readable diagrams, comparisons, worked examples and connected explanations. More pages are fine when they help. |
+| **Compact Recall** | Efficient revision: concise rules, conditions, formulas, exceptions and traps, without tiny text or silent omissions. |
+| **Learning guide** | The requested lesson scope, in either presentation. |
+| **Side-by-side answer reviewer** | Questions paired with visible answers and explanations. Long items can use a full-width paired layout. |
+| **Mock exam** | Questions first; complete key and rationales after the final question. |
+
+If no new style is requested, existing compact-study behavior remains available.
+Practice is optional. Matching answer-reviewer/exam versions use the same checked
+bank and option ordering; try the mock exam first if you want an unseen attempt.
+The skill does not impose a subject, item count, or universal page limit.
+
+An optional portrait tablet profile starts at 180 x 240 mm with readable body
+text and pen space. A4 remains the default; other device/paper layouts can be
+adapted. Longer guides can include a linked topic navigator and PDF bookmarks.
+Figures must teach an accurate relationship, not decorate the page; corrections
+and older/current source comparisons retain clear labels and retrievable evidence.
+
+Example:
+
+> Use Reviewer mode to create a Visual Learning guide and matching 12-question
+> answer reviewer and mock exam from these sources. My purpose is general curiosity.
+> Use the tablet profile; preserve necessary explanations and keep answers at the end
+> of the mock exam. Do not treat document creation as proof I understand the lesson.
+
+See [presentation choices](references/presentation.md) and
+[practice documents and bank helper](references/assessments.md).
+
 ## Features
 
 - Maps supplied sources first, then follows the current topic using relevant evidence.
@@ -163,7 +196,9 @@ syntax such as `$reviewer-building` is not required.
 **SKILL.md is the starting point, not the entire package.** It links to supporting
 instructions the chat may not be able to open automatically. Attach the relevant
 files from [references/](references/) too, especially source handling, progress,
-and practice/visual guidance. For Typst output, supply the template assets and
+and practice/visual guidance. For the new styles and practice formats, include
+[presentation.md](references/presentation.md) and [assessments.md](references/assessments.md).
+For Typst output, supply the template assets and
 Typst/verification references as well. If the chat cannot read a linked resource,
 it should ask for it or state the limitation, rather than claim to have followed it.
 

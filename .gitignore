@@ -16,10 +16,13 @@
 !/references/practice-and-visuals.md
 !/references/verification.md
 !/references/progress.md
+!/references/presentation.md
+!/references/assessments.md
 !/scripts/
 /scripts/*
 !/scripts/extract-materials.py
 !/scripts/verify-reviewer.py
+!/scripts/build-practice.py
 !/assets/
 /assets/*
 !/assets/template/

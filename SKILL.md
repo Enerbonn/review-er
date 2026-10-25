@@ -71,7 +71,28 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
    Read [references/typst.md](references/typst.md) before writing or compiling.
    Read [references/progress.md](references/progress.md) for subject/lesson memory.
 
-## Reviewer mode
+## Choose workflow, presentation and deliverables separately
+
+Review/Reviewer controls interaction, not page design. Independently select
+**Visual Learning** (understand the subject with readable visual relationships)
+or **Compact Recall** (concise revision with essential conditions intact).
+If neither is requested, keep the existing compact-study behavior and saved
+preferences; do not silently restyle earlier work. Neither style proves mastery.
+Deliverables are independently selectable: learning guide, side-by-side answer
+reviewer, and/or mock exam. Practice remains opt-in, never a mandatory appendix.
+Infer clear choices, reuse onboarding answers and ask one bundled question only
+for material unresolved choices. With no established interaction choice, "create
+the full visual reviewer" authorizes Reviewer-mode drafting, not a per-page
+approval loop. A presentation request alone never overrides an explicit Review
+choice. In Review mode, even a
+visual style preserves outline, discussion and write-up approvals.
+
+Read [references/presentation.md](references/presentation.md) for style, scope,
+figures and device choices; read [references/assessments.md](references/assessments.md)
+when practice documents are requested. Save these choices and coverage mapping
+in progress. A style change changes presentation, not approved facts or scope.
+
+## Reviewer mode workflow
 
 Complete the section evidence check for each part, then create the requested reviewer directly. Include
 precise definitions, worked examples, useful source visuals/teacher analogies,
@@ -123,7 +144,9 @@ and mark the section complete only when its planned subparts are covered.
    source and an authoritative reference, explain the discrepancy and limits,
    and ask whether to include the corrected account, an attributed course account
    with a correction note, both, or omit the disputed point. Never present a known
-   false claim as established fact. A harmless teaching simplification needs its
+   false claim as established fact. Reuse an explicit inclusion choice (such as
+   both older course wording and a checked update) instead of asking it again.
+   A harmless teaching simplification needs its
    limits explained only when those limits matter to this lesson.
    Use the smallest explanation that helps: text, symbols, or equations are enough
    when clear. When spatial relationships, changing values, or intermediate steps
@@ -179,6 +202,11 @@ question without writing the section. If the learner changes scope, update the
 plan with them; don't silently discard their approved work.
 
 ## Compact study notes
+
+The following remains the unspecified-style default. Explicit Visual Learning
+may use more pages, explanations and diagrams to teach the full mapped scope;
+Compact Recall removes repetition before substance. Both preserve readable type
+and essential steps. See presentation guidance rather than forcing a page limit.
 
 Keep the PDF focused on learning: precise definitions, rules, necessary worked
 steps, useful visuals, and approved applications. Keep source filenames/paths,

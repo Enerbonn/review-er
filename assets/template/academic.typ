@@ -239,6 +239,48 @@
 // ─────────────────────────────────────────────────────────────
 // THE TEMPLATE
 // ─────────────────────────────────────────────────────────────
+
+// New study units inherit the reading size; legacy components remain compatible.
+#let study-unit(title, body) = block(above: 12pt, below: 12pt)[
+  #block(sticky: true, below: 7pt)[#text(weight: "bold", fill: maroon)[#title]]
+  #body
+]
+
+#let study-figure(src, caption: none) = block(breakable: false, above: 10pt, below: 10pt)[
+  #align(center)[#src]
+  #if caption != none { block(above: 7pt)[#text(size: 10.5pt, fill: slate)[#caption]] }
+]
+
+#let note-lines(count: 2) = {
+  for i in range(count) {
+    block(above: 10pt, below: 2pt)[#line(length: 100%, stroke: 0.4pt + warm-rule)]
+  }
+}
+
+// Paired views: preserve body size, use stacking for long questions/rationales.
+#let practice-item(body, max-height: 205mm) = layout(size => {
+  let measured = measure(block(width: size.width)[#body])
+  block(breakable: measured.height > max-height, above: 9pt, below: 13pt)[#body]
+})
+
+#let practice-pair(question, answer, stacked: false, label: "Question", max-height: 205mm) = layout(size => {
+  let pair = if stacked {
+    [#question #block(above: 9pt, inset: 9pt, fill: cream)[#answer]]
+  } else {
+    grid(columns: (1.1fr, 1fr), gutter: 12pt,
+      question, block(fill: cream, inset: 9pt)[#answer])
+  }
+  let measured = measure(block(width: size.width)[#pair])
+  if measured.height <= max-height {
+    block(breakable: false, above: 9pt, below: 13pt)[#pair]
+  } else {
+    // Oversized content must continue, never silently overflow a whole page.
+    practice-item(max-height: max-height)[#question]
+    block(sticky: true, above: 10pt)[#strong[#label — answer and explanation]]
+    block(breakable: true, fill: cream, inset: 9pt)[#answer]
+  }
+})
+
 #let reviewer(
   title: "Untitled reviewer",
   course: none,       // "MATH 018 — Linear Algebra with Simulation Software"
@@ -249,8 +291,13 @@
   sources: (),
   cover: false,
   section-breaks: false,
+  style: "classic",    // classic | visual | compact; unspecified preserves old layout
+  profile: "paper",    // paper | tablet
+  navigator: false,
   body,
 ) = {
+  assert(style in ("classic", "visual", "compact"), message: "Unknown presentation style")
+  assert(profile in ("paper", "tablet"), message: "Unknown page profile")
   set document(title: title, author: if author == none { () } else { author })
 
   set page(
@@ -284,8 +331,15 @@
     },
   )
 
-  set text(font: font-display, size: 11pt, fill: warm-body, lang: "en")
-  set par(justify: true, leading: 0.75em, spacing: 1.1em, first-line-indent: 0pt)
+  set page(width: if profile == "tablet" { 180mm } else { 210mm },
+    height: if profile == "tablet" { 240mm } else { 297mm },
+    margin: if profile == "tablet" {
+      (top: 14mm, bottom: 16mm, left: 13mm, right: 22mm)
+    } else { (top: 2.5cm, bottom: 2.1cm, left: 2.4cm, right: 2.4cm) })
+
+  set text(font: font-display, size: if style == "visual" { 11.5pt } else { 11pt }, fill: warm-body, lang: "en")
+  set par(justify: style == "classic", leading: if style == "compact" { 0.55em } else { 0.75em },
+    spacing: if style == "compact" { 0.65em } else { 1.1em }, first-line-indent: 0pt)
   set heading(numbering: "1.1")
 
   // ── Headings ───────────────────────────────────────────────
@@ -295,11 +349,12 @@
     block(
       width: 100%,
       fill: maroon,
-      inset: (x: 16pt, top: 13pt, bottom: 15pt),
+      inset: if style == "compact" { (x: 12pt, top: 8pt, bottom: 9pt) } else { (x: 16pt, top: 13pt, bottom: 15pt) },
       radius: 2pt,
-      above: 0pt,
-      below: 17pt,
+      above: if style == "classic" { 0pt } else { 14pt },
+      below: if style == "compact" { 10pt } else { 17pt },
       breakable: false,
+      sticky: true,
     )[
       #if it.numbering != none [
         #block(below: 6pt)[
@@ -308,12 +363,12 @@
           ]
         ]
       ]
-      #text(font: font-display, size: 19pt, weight: "bold", fill: white)[#it.body]
+      #text(font: font-display, size: if style == "compact" { 15pt } else { 19pt }, weight: "bold", fill: white)[#it.body]
     ]
   }
 
   // Level 2: maroon, with a gold hairline beneath.
-  show heading.where(level: 2): it => block(above: 19pt, below: 9pt, breakable: false)[
+  show heading.where(level: 2): it => block(above: 19pt, below: 9pt, breakable: false, sticky: true)[
     #text(font: font-display, size: 13.5pt, weight: "bold", fill: maroon)[
       #if it.numbering != none [
         #counter(heading).display(it.numbering)#h(8pt)
@@ -325,7 +380,7 @@
   ]
 
   // Level 3: quiet.
-  show heading.where(level: 3): it => block(above: 14pt, below: 5pt, breakable: false)[
+  show heading.where(level: 3): it => block(above: 14pt, below: 5pt, breakable: false, sticky: true)[
     #text(font: font-display, size: 11.2pt, weight: "bold", fill: warm-ink)[#it.body]
   ]
 
@@ -339,7 +394,7 @@
     breakable: true,
     above: 11pt,
     below: 11pt,
-  )[#set text(font: font-mono, size: 8.8pt); #it]
+  )[#set text(font: font-mono, size: if style == "classic" { 8.8pt } else { 10.5pt }); #it]
 
   show raw.where(block: false): it => box(
     fill: cream-2,
@@ -355,12 +410,12 @@
     fill: (x, y) => if y == 0 { maroon } else if calc.odd(y) { cream } else { white },
   )
   show table.cell.where(y: 0): set text(
-    font: font-label, weight: "bold", fill: white, size: 9pt,
+    font: font-label, weight: "bold", fill: white, size: if style == "classic" { 9pt } else { 10.5pt },
   )
 
   // ── Lists ──────────────────────────────────────────────────
-  set list(indent: 7pt, spacing: 0.72em, marker: text(fill: au)[#sym.bullet])
-  set enum(indent: 7pt, spacing: 0.72em)
+  set list(indent: 7pt, spacing: if style == "compact" { 0.35em } else { 0.72em }, marker: text(fill: au)[#sym.bullet])
+  set enum(indent: 7pt, spacing: if style == "compact" { 0.35em } else { 0.72em })
   show link: it => text(fill: maroon)[#underline(offset: 2pt, stroke: 0.4pt + au-light)[#it]]
   show emph: it => text(fill: warm-ink)[#it]
 
@@ -445,5 +500,12 @@
     v(14pt)
   }
 
+  if navigator {
+    block(above: 12pt, below: 5pt, sticky: true)[
+      #text(font: font-label, size: 11pt, weight: "bold", fill: maroon)[Topics]
+    ]
+    outline(title: none, depth: 2)
+    v(10pt)
+  }
   body
 }

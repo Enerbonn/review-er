@@ -46,6 +46,24 @@ If viewing is unavailable, keep `compiled; visual check pending`. If Typst is
 missing, keep `written; compile pending`. Do not install global tools automatically
 or describe unchecked output as verified.
 
+## Presentation and practice checks
+
+Check Visual Learning against the agreed coverage map, not just its appearance.
+Compact Recall must retain essential conditions/steps and label agreed abridgment.
+Inspect small diagram labels at useful zoom, meaningful color-independent cues,
+table reflow, pen margins, topic links, actual bookmarks and PDF text selection.
+Do not mark a style successful merely because it has more or fewer pages.
+
+For practice: compare item count, stems/options and computed answer letters with
+the finalized canonical bank in both rendered views. Check rationales after option
+shuffle, blueprint coverage, semantic duplicates, ambiguity and distractor cues.
+Extract/read the exam's actual text and bookmarks as well as viewing all pages:
+no keys/rationales before the answer section; every option and explanation must
+remain visible. Successful compilation of an oversized unbreakable block can
+still hide text. Inspect continuations and final lines; restructure rather than
+silently clipping or reducing the font. Helper validation is structural, not
+proof of factual correctness, calibrated difficulty, or learner mastery.
+
 ## Optional demos
 
 Follow the available visualization tool/skill's checks for inline interactive aids.
