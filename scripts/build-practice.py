@@ -10,6 +10,9 @@ import random
 import re
 import shutil
 
+PROFILES = {'paper': '245mm', 'tablet': '205mm', 'tablet-portrait': '205mm',
+            'tablet-landscape': '145mm', 'computer': '142mm', 'mobile': '151mm'}
+
 
 def required(value, field):
     if not isinstance(value, str) or not value.strip():
@@ -96,12 +99,12 @@ def answer(item, number):
 
 
 def render(bank, view, profile):
-    max_height = '205mm' if profile == 'tablet' else '245mm'
+    max_height = PROFILES[profile]
     suffix = 'Answer reviewer' if view == 'reviewer' else 'Mock exam'
     title = json.dumps(bank['title'] + ' — ' + suffix, ensure_ascii=False)
     lines = ['#import "template/academic.typ": *',
              f'#show: reviewer.with(title: {title}, style: "visual", profile: "{profile}")',
-             '#show heading.where(level: 2): it => block(sticky: true, above: 8pt, below: 6pt)[#text(size: 11.5pt, weight: "bold", fill: maroon)[#it.body]]',
+             f'#show heading.where(level: 2): it => block(sticky: true, above: 8pt, below: 6pt)[#text(size: {"12pt" if profile == "mobile" else "11.5pt"}, weight: "bold", fill: maroon)[#it.body]]',
              literal('Practice material; not an official or validated exam.')]
     if view == 'exam':
         lines += ['= Questions']
@@ -115,14 +118,14 @@ def render(bank, view, profile):
         lines += [literal('Answers are visible. Use the matching mock exam first for an unseen attempt.')]
         for n, item in enumerate(bank['items'], 1):
             length = len(item['stem']) + sum(len(o['text']) for o in item['options']) + len(item['rationale']) + sum(map(len, item['distractors'].values()))
-            stacked = 'true' if length > 750 else 'false'
+            stacked = 'true' if profile == 'mobile' or length > 750 else 'false'
             lines += ['#practice-pair([', question(item, n), '], [', answer(item, n),
                       f'], stacked: {stacked}, label: "Question {n}", max-height: {max_height})']
     return '\n\n'.join(lines) + '\n'
 
 
 def build(bank_path, output, view='both', count=None, profile='paper', seed=None):
-    if view not in {'both', 'reviewer', 'exam'} or profile not in {'paper', 'tablet'}:
+    if view not in {'both', 'reviewer', 'exam'} or profile not in PROFILES:
         raise ValueError('Unsupported view or profile')
     bank_path, output = Path(bank_path).resolve(), Path(output).resolve()
     if output.exists() and (not output.is_dir() or any(output.iterdir())):
@@ -152,7 +155,7 @@ def main():
     parser.add_argument('-o', '--output', type=Path, required=True)
     parser.add_argument('--view', choices=['reviewer', 'exam', 'both'], default='both')
     parser.add_argument('--count', type=int)
-    parser.add_argument('--profile', choices=['paper', 'tablet'], default='paper')
+    parser.add_argument('--profile', choices=list(PROFILES), default='paper')
     parser.add_argument('--seed', type=int)
     args = parser.parse_args()
     try:

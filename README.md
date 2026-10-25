@@ -53,9 +53,21 @@ Practice is optional. Matching answer-reviewer/exam versions use the same checke
 bank and option ordering; try the mock exam first if you want an unseen attempt.
 The skill does not impose a subject, item count, or universal page limit.
 
-An optional portrait tablet profile starts at 180 x 240 mm with readable body
-text and pen space. A4 remains the default; other device/paper layouts can be
-adapted. Longer guides can include a linked topic navigator and PDF bookmarks.
+Choose a layout independently of mode/style:
+
+| Profile | Intended use |
+|---|---|
+| `computer` | Landscape laptop/desktop reading, with a comfortable centered column |
+| `tablet-portrait` | Portrait tablet reading and pen annotation |
+| `tablet-landscape` | Landscape tablet reading and pen annotation |
+| `mobile` | Phone portrait reading; 12 pt body text and stacked question/answer pairs |
+| `paper` | A4 print layout; unchanged default |
+
+Existing `tablet` requests still mean portrait. Ask for multiple editions when
+needed: PDFs are fixed layouts and do not automatically reflow when rotated.
+The skill preserves content across editions and rearranges wide comparisons or
+diagrams for narrow screens instead of shrinking the text. Longer guides can
+include a linked topic navigator and PDF bookmarks.
 Figures must teach an accurate relationship, not decorate the page; corrections
 and older/current source comparisons retain clear labels and retrievable evidence.
 

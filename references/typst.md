@@ -30,8 +30,10 @@ longer document. Keep metadata fields `none` and `sources: ()` by default.
 ## Components
 
 Optional choices: `style: "visual"` or `style: "compact"`; default `"classic"`
-preserves the previous layout. `profile: "tablet"` selects 180 x 240 mm portrait
-with pen margin; default `"paper"` remains A4. `navigator: true` adds a linked
+preserves the previous layout. Profiles are `"computer"`, `"tablet-portrait"`,
+`"tablet-landscape"`, `"mobile"`, and default `"paper"` (A4). `"tablet"` is a
+backward-compatible portrait alias. See presentation.md for sizes and reflow rules.
+`navigator: true` adds a linked
 topic outline. Use headings for PDF bookmarks; inspect the actual navigation.
 These are independent of Review/Reviewer and output selection. Read
 [presentation.md](presentation.md) before designing explicit styles.

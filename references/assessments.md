@@ -56,11 +56,16 @@ verification runs, so building one PDF does not stale the other's evidence.
 python <skill>/scripts/build-practice.py bank.json -o <lesson>/practice --view both --count 8 --profile tablet --seed 17
 ```
 
-`--view reviewer|exam|both`; `--profile paper|tablet`; optional `--seed` shuffles
+`--view reviewer|exam|both`; `--profile paper|computer|tablet-portrait|tablet-landscape|mobile`
+(`tablet` remains a portrait alias); optional `--seed` shuffles
 options once for both views; without a seed input ordering is preserved. Refuses
 nonempty destinations. Long pairs stack; measured whole-page overflows switch to
 full-width continuing content with the question number retained for its answer.
 Inspect all pages and restructure awkward continuations rather than shrinking type.
+Mobile always uses full-width stacked question/answer pairs. Other profiles use
+side-by-side pairs when readable and stack longer items; continuation thresholds
+respect each profile's vertical space. A requested device changes layout, not
+bank content, option order, count or answer visibility.
 
 Bank shape (make all items/source fields real for the agreed lesson):
 

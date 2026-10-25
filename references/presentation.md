@@ -65,10 +65,27 @@ bulky source logs local, while making corrections and their evidence retrievable
 
 ## Device profile and navigation
 
-The optional **tablet** starting profile is portrait 180 x 240 mm with roughly
-11–12 pt body text, vector figures and a generous right pen margin. It is a layout
-choice, not a claim about every tablet's screen. Default **paper** keeps the
-existing A4 profile; alternative devices/paper sizes can be adapted when requested.
+Select a profile independently of style and interaction; reuse the saved choice.
+Infer a clear requested device/orientation; don't repeat setup. These are PDF
+layout starting points, not claims about every physical screen:
+
+| Profile | Canvas | Reading approach |
+|---|---|---|
+| `paper` (default) | 210 x 297 mm, A4 portrait | Existing print layout |
+| `computer` | 280 x 175 mm, landscape | Laptop/desktop; centered comfortable reading column, wide-screen canvas |
+| `tablet-portrait` | 180 x 240 mm | 11–12 pt body, right pen margin |
+| `tablet-landscape` | 240 x 180 mm | Comfortable central column and annotation margin |
+| `mobile` | 100 x 178 mm, portrait | 12 pt body, short headings, full-width stacked content |
+
+`tablet` remains an alias for `tablet-portrait` for existing files/commands. Export
+separate editions when several devices/orientations are requested; a fixed PDF
+doesn't automatically reflow when rotated. Keep the same checked content map.
+For mobile, replace wide comparison grids with successive labeled comparisons,
+stack paired question/answers and simplify/rearrange diagrams without dropping
+labels or conditions. Large practice items continue across pages when necessary.
+Landscape pages have less vertical room; verify actual content/continuations.
+Do not merely shrink an A4 page onto a phone. Paper or alternate custom layouts
+may still be adapted when requested, without hard-coding device manufacturers.
 Use one comfortable main column. Side-by-side is for real comparisons or paired
 questions, not all reading. Use restrained color, strong contrast and non-color
 labels; no tiny footnotes doing the teaching. Add pen space where useful.

@@ -292,12 +292,22 @@
   cover: false,
   section-breaks: false,
   style: "classic",    // classic | visual | compact; unspecified preserves old layout
-  profile: "paper",    // paper | tablet
+  profile: "paper",    // paper | computer | tablet-portrait | tablet-landscape | mobile; tablet is a portrait alias
   navigator: false,
   body,
 ) = {
   assert(style in ("classic", "visual", "compact"), message: "Unknown presentation style")
-  assert(profile in ("paper", "tablet"), message: "Unknown page profile")
+  assert(profile in ("paper", "tablet", "tablet-portrait", "tablet-landscape", "computer", "mobile"), message: "Unknown page profile")
+  let portrait = (width: 180mm, height: 240mm,
+    margin: (top: 14mm, bottom: 16mm, left: 13mm, right: 22mm))
+  let devices = (
+    paper: (width: 210mm, height: 297mm, margin: (top: 25mm, bottom: 21mm, left: 24mm, right: 24mm)),
+    tablet: portrait, tablet-portrait: portrait,
+    tablet-landscape: (width: 240mm, height: 180mm, margin: (top: 14mm, bottom: 16mm, left: 25mm, right: 35mm)),
+    computer: (width: 280mm, height: 175mm, margin: (top: 14mm, bottom: 14mm, left: 55mm, right: 55mm)),
+    mobile: (width: 100mm, height: 178mm, margin: (top: 10mm, bottom: 12mm, left: 8mm, right: 8mm)),
+  )
+  let device = devices.at(profile)
   set document(title: title, author: if author == none { () } else { author })
 
   set page(
@@ -309,8 +319,8 @@
         grid(
           columns: (1fr, auto),
           align: (left, right),
-          if course != none { course } else { title },
-          if topic != none { topic } else { "" },
+          if profile == "mobile" { "Study notes" } else if course != none { course } else { title },
+          if profile == "mobile" { "" } else if topic != none { topic } else { "" },
         )
         v(-3pt)
         line(length: 100%, stroke: 0.5pt + warm-rule)
@@ -324,20 +334,16 @@
         grid(
           columns: (1fr, auto),
           align: (left, right),
-          title,
+          if profile == "mobile" { "Study notes" } else { title },
           [#counter(page).get().first() / #counter(page).final().first()],
         )
       }
     },
   )
 
-  set page(width: if profile == "tablet" { 180mm } else { 210mm },
-    height: if profile == "tablet" { 240mm } else { 297mm },
-    margin: if profile == "tablet" {
-      (top: 14mm, bottom: 16mm, left: 13mm, right: 22mm)
-    } else { (top: 2.5cm, bottom: 2.1cm, left: 2.4cm, right: 2.4cm) })
+  set page(width: device.width, height: device.height, margin: device.margin)
 
-  set text(font: font-display, size: if style == "visual" { 11.5pt } else { 11pt }, fill: warm-body, lang: "en")
+  set text(font: font-display, size: if profile == "mobile" { 12pt } else if style == "visual" { 11.5pt } else { 11pt }, fill: warm-body, lang: "en")
   set par(justify: style == "classic", leading: if style == "compact" { 0.55em } else { 0.75em },
     spacing: if style == "compact" { 0.65em } else { 1.1em }, first-line-indent: 0pt)
   set heading(numbering: "1.1")
@@ -349,9 +355,9 @@
     block(
       width: 100%,
       fill: maroon,
-      inset: if style == "compact" { (x: 12pt, top: 8pt, bottom: 9pt) } else { (x: 16pt, top: 13pt, bottom: 15pt) },
+      inset: if style == "compact" or profile == "mobile" { (x: 10pt, top: 8pt, bottom: 9pt) } else { (x: 16pt, top: 13pt, bottom: 15pt) },
       radius: 2pt,
-      above: if style == "classic" { 0pt } else { 14pt },
+      above: if style == "classic" and profile not in ("computer", "tablet-landscape", "mobile") { 0pt } else { 14pt },
       below: if style == "compact" { 10pt } else { 17pt },
       breakable: false,
       sticky: true,
@@ -363,7 +369,7 @@
           ]
         ]
       ]
-      #text(font: font-display, size: if style == "compact" { 15pt } else { 19pt }, weight: "bold", fill: white)[#it.body]
+      #text(font: font-display, size: if style == "compact" or profile == "mobile" { 15pt } else { 19pt }, weight: "bold", fill: white)[#it.body]
     ]
   }
 
@@ -445,7 +451,7 @@
           #v(1.1cm)
         ]
 
-        #text(font: font-display, size: 34pt, weight: "bold", fill: maroon-deep, hyphenate: false)[#title]
+        #text(font: font-display, size: if profile == "mobile" { 24pt } else { 34pt }, weight: "bold", fill: maroon-deep, hyphenate: false)[#title]
 
         #if topic != none [
           #v(0.55cm)
@@ -489,7 +495,7 @@
       ]
     }
     block(below: 6pt)[
-      #text(font: font-display, size: 26pt, weight: "bold", fill: maroon-deep)[#title]
+      #text(font: font-display, size: if profile == "mobile" { 20pt } else { 26pt }, weight: "bold", fill: maroon-deep)[#title]
     ]
     if topic != none {
       block(below: 12pt)[
