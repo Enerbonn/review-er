@@ -28,7 +28,11 @@ other fields and earlier learning evidence, and use the new preferences going fo
 
 Save interaction mode separately from presentation (legacy/Visual Learning/Compact
 Recall), output selection (guide/answer reviewer/mock exam), device/page profile,
-and length preferences. Reuse explicit choices; don't repeat setup or infer mastery.
+and length preferences. Record whether each choice came from the learner, a saved
+learner preference, or explicit delegation. An older agent-selected default is
+unresolved for onboarding purposes; ask once before the next document build,
+preserving approved content and the pending learning step. Reuse explicit choices;
+don't repeat setup or infer mastery.
 Keep one checked concept/source map shared by styles and an assessment blueprint
 linked to the same scope. Record approved exclusions or abridgment, canonical bank
 path/hash and finalized option ordering, correction dates/jurisdiction when relevant,

@@ -31,8 +31,13 @@ preferences are saved separately, and can change without restarting a lesson.
 Examples distinguish direct applications from foundational connections; added
 examples are labeled separately from instructor content.
 
-Reviewers default to compact study notes: definitions, essential worked examples,
-and useful visuals. Dates, source references, approvals, and verification details
+Before the first build, the agent asks for any missing document choices together:
+learning guide, explained-answer reviewer or mock exam; detailed, balanced or
+concise content; and prose, bullets or a visual mix. It waits for your answer,
+reuses choices you already supplied, and does not mistake exam preparation for a
+request for a mock exam. You can say "use defaults" or "you choose" to delegate;
+the fallback is compact study notes with essential examples and useful visuals.
+Dates, source references, approvals, and verification details
 stay in local progress files. Covers, bibliographies, and extended notes are
 available when requested. Compactness preserves required topics and readability.
 
@@ -48,7 +53,7 @@ These choices are separate from Review/Reviewer:
 | **Side-by-side answer reviewer** | Questions paired with visible answers and explanations. Long items can use a full-width paired layout. |
 | **Mock exam** | Questions first; complete key and rationales after the final question. |
 
-If no new style is requested, existing compact-study behavior remains available.
+Existing compact-study behavior remains available when selected or delegated.
 Practice is optional. Matching answer-reviewer/exam versions use the same checked
 bank and option ordering; try the mock exam first if you want an unseen attempt.
 The skill does not impose a subject, item count, or universal page limit.

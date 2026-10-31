@@ -65,7 +65,10 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
    repeated teaching or section approval turns. An explicit request to create
    the full reviewer already authorizes drafting within its stated scope;
    resolve only material ambiguities, not routine choices.
-6. Initialize the preamble, bundled template, and progress files. Use the
+6. Resolve the document choices below before initializing the reviewer or building
+   its first output. Progress records and conversational teaching may proceed while
+   document choices are pending. Then initialize the preamble, bundled template,
+   and progress files. Use the
    user's course folder if supplied, otherwise `reviewers/YYYY-MM-DD-topic/` in the
    selected project. Keep dates and workflow metadata in local progress; the reviewer defaults to study content only.
    Read [references/typst.md](references/typst.md) before writing or compiling.
@@ -76,12 +79,26 @@ visual sources; this skill uses those sources to teach and assemble the reviewer
 Review/Reviewer controls interaction, not page design. Independently select
 **Visual Learning** (understand the subject with readable visual relationships)
 or **Compact Recall** (concise revision with essential conditions intact).
-If neither is requested, keep the existing compact-study behavior and saved
-preferences; do not silently restyle earlier work. Neither style proves mastery.
+Neither style proves mastery. Reuse explicit current or saved choices; a prior
+agent-selected default is not a learner preference. Do not silently restyle earlier work.
 Deliverables are independently selectable: learning guide, side-by-side answer
 reviewer, and/or mock exam. Practice remains opt-in, never a mandatory appendix.
-Infer clear choices, reuse onboarding answers and ask one bundled question only
-for material unresolved choices. With no established interaction choice, "create
+Before the first reviewer is written or built, ask one concise bundled question
+for any unresolved **deliverable**, **detail level**, and **presentation** choices.
+Offer concrete choices: a learning guide, questions with explained answers, or a
+mock exam; detailed explanations, balanced detail, or concise recall; mostly
+prose, mostly bullets, or a visual mix of text, tables and diagrams. These axes
+are independent: concise notes can still be visual, and an exam-preparation goal
+does not by itself request a mock exam. Resolve a reading device or file format
+when it materially affects the requested output; the normal build is a Typst PDF,
+but honor an explicitly requested alternative through available tools.
+Wait for the missing choices before authoring or compiling. Do not silently
+choose compact notes because the learner only said "teach me", "build a reviewer",
+or approved a section's content. Content approval does not select presentation.
+Do not re-ask dimensions already clear from the request or saved learner answers.
+An explicit "use defaults", "you choose", or equivalent delegates those choices;
+record that delegation and use the existing compact-study defaults where appropriate.
+With no established interaction choice, "create
 the full visual reviewer" authorizes Reviewer-mode drafting, not a per-page
 approval loop. A presentation request alone never overrides an explicit Review
 choice. In Review mode, even a
@@ -203,7 +220,9 @@ plan with them; don't silently discard their approved work.
 
 ## Compact study notes
 
-The following remains the unspecified-style default. Explicit Visual Learning
+The following is the fallback when the learner delegates the choice or explicitly
+requests the existing compact-study behavior; it does not bypass first-build
+onboarding. Explicit Visual Learning
 may use more pages, explanations and diagrams to teach the full mapped scope;
 Compact Recall removes repetition before substance. Both preserve readable type
 and essential steps. See presentation guidance rather than forcing a page limit.

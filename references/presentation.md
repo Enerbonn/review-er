@@ -4,7 +4,10 @@
 
 Select interaction (Review/Reviewer), presentation and outputs independently.
 Do not repeat supplied goals or interrogate a learner who already requested a full
-visual guide. Default to previous behavior when style is unspecified. Preserve
+visual guide. Before first authoring/build, resolve missing deliverable, detail
+and presentation choices with one bundled question and wait; see SKILL.md.
+Unspecified style is not permission to choose compact notes. Reuse explicit saved
+preferences; use defaults when the learner delegates the choice. Preserve
 existing approved material; user-requested restyling authorizes layout changes,
 not silent scope reduction. Practice documents remain optional and separate.
 
