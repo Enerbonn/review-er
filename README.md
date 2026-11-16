@@ -99,6 +99,10 @@ See [presentation choices](references/presentation.md) and
 - Saves dated local subject/lesson progress, understanding gaps, completed reviewers and the exact resume point.
 - Builds a Typst PDF and requires inspection of rendered pages, with evidence that detects stale output.
 
+## Companion video tools
+
+[Watch](https://github.com/Enerbonn/watch) adapts review(er)'s timestamp matching for general video tasks and detail-sensitive follow-up questions. [AVC](https://github.com/Enerbonn/AVC) can provide paired timed speech and visual exports for either skill.
+
 ## Partner: TransVision
 
 [TransVision](https://github.com/Enerbonn/TransVision) turns a recording's visual
